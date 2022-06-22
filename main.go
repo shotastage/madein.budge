@@ -17,11 +17,11 @@ func main() {
 }
 
 func serveBudge(c echo.Context) error {
-	f, err := os.Open("assets/budge.png")
+	f, err := os.Open("assets/budge.svg")
 	if err != nil {
 		return err
 	}
-	return c.Stream(http.StatusOK, "image/png", f)
+	return c.Stream(http.StatusOK, "image/svg+xml", f)
 
 	// return c.String(http.StatusOK, "Hello, World!")
 }
