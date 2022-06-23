@@ -13,6 +13,7 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 	e.GET("/", serveBudge)
+	e.GET("/normal", serveBudge)
 	e.Logger.Fatal(e.Start(":" + os.Getenv("PORT")))
 }
 
